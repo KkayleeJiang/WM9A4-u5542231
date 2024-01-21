@@ -46,12 +46,102 @@
 
 #pond 10 {
   display: flex;
-  flex-direction: column;
-}
-
-#pond 11 {
-  display: flex;
   flex-direction: row-reverse;
   justify-content: flex-end;
 }
 
+#pond 11 {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+}
+
+#pond 12 {
+  display: flex;
+  flex-direction: column-reverse;
+  justify-content: space-between;
+}
+
+#pond 13 {
+  display: flex;
+  flex-direction: row-reverse;
+  justify-content: center;
+  align-items: flex-end;
+}
+
+#pond 14 {
+  display: flex;
+}
+
+.yellow {
+  order: 1;
+}
+
+#pond 15 {
+  display: flex;
+}
+
+.red {
+  order: -2
+}
+
+#pond 16 {
+  display: flex;
+  align-items: flex-start;
+}
+
+.yellow {
+  align-self: flex-end;
+}
+
+#pond 17 {
+  display: flex;
+  align-items: flex-start;
+}
+
+.yellow {
+  order: 4;
+  align-self: flex-end;
+}
+
+#pond 18 {
+  display: flex;
+  flex-wrap: wrap
+}
+
+#pond 19 {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+}
+
+#pond 20 {
+  display: flex;
+  flex-flow: column wrap;
+}
+
+#pond 21 {
+  display: flex;
+  flex-wrap: wrap;
+  align-content: flex-start;
+}
+
+#pond 22 {
+  display: flex;
+  flex-wrap: wrap;
+  align-content: flex-end;
+}
+
+#pond 23 {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column-reverse;
+  align-content: center;
+}
+
+#pond 24 {
+  display: flex;
+  flex-flow: column-reverse wrap-reverse;
+  justify-content: center;
+  align-content: space-between;
+}
