@@ -1,0 +1,29 @@
+# some praactice about Number in Python
+number = 8.13
+
+rounded_number = round(number, 1)
+print(rounded_number)
+
+integer_number = int(5.7)
+print(integer_number)
+
+float_number = float(number)
+print(float_number)
+
+absolute_value = abs(-5.5)
+print(absolute_value)
+
+# plus or minus
+x = 3
+y = 5
+if x > y:
+  print(x + y)
+else:
+  print(x - y)
+
+# List of Chinese cities
+city = ["Beijing", "Shanghai", "Guangzhou", "Shenzhen", "Chendu", "Wuhan", "Hongkoog"]
+
+for i in city:
+  i = "China" + i
+  print(i)
