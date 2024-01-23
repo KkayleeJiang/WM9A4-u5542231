@@ -1,4 +1,4 @@
-# some praactice about Number in Python
+# Some practice about Numbers in Python
 number = 8.13
 
 rounded_number = round(number, 1)
@@ -22,8 +22,21 @@ else:
   print(x - y)
 
 # List of Chinese cities
-city = ["Beijing", "Shanghai", "Guangzhou", "Shenzhen", "Chendu", "Wuhan", "Hongkoog"]
+city = ["Beijing", "Shanghai", "Guangzhou", "Shenzhen", "Chengdu", "Wuhan", "Hongkoog"]
 
 for i in city:
   i = "China" + i
   print(i)
+
+# Creating List
+list_A = ["Hello", 1, "Python", "Assignment", "WM9A4"]
+print(list_A)
+
+# Printing Value
+nct_dream_members = ["Mark", "Renjun", "Jeno", "Haechan", "Jaemin", "Chenle", "Jisung"]
+print(nct_dream_members[4])
+
+# Using in String
+nct_dream_members = ["Mark", "Renjun", "Jeno", "Haechan", "Jaemin", "Chenle", "Jisung"]
+message = "My bias is {}".format(nct_dream_members[4])
+print(message)
