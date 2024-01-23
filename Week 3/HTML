@@ -1,0 +1,12 @@
+#an example for basic HTML
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Homepage</title>
+</head>
+<body>
+  <h1>This is a headline for homepage</h1>
+  <p>This is a paragraph.</p>
+  <a href="http://www.example.com">This is a link</a>
+</body>
+</html>
