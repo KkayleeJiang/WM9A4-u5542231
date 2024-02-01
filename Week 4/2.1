@@ -1,0 +1,36 @@
+# python flask
+from flask import Flask, render_template, request, redirect, url_for
+import sqlite3
+
+app = Flask(__name__)
+
+DATABASE = "your_database.db"
+
+@app.route("/")
+def page():
+    return render_template("page.html", data=data_from_database)
+
+if __name__ == "__main__":
+    app.run(debug=True)
+
+#python test
+pip install pytest
+
+# my_module.py
+def add_numbers(a, b):
+    return a + b
+def multiply_numbers(a, b):
+    return a * b   
+# test_my_module.py
+from my_module import add_numbers, multiply_numbers
+
+def test_add_numbers():
+    result = add_numbers(2, 3)
+    assert result == 5
+
+def test_multiply_numbers():
+    result = multiply_numbers(2, 3)
+    assert result == 6
+
+# in terminal
+pytest
