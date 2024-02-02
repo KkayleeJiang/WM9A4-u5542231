@@ -1,0 +1,75 @@
+# py flask - blog
+
+from flask import Flask, render_template, request, redirect, url_for, session
+from functools import wraps
+
+app = Flask(__name__)
+app.secret_key = 'your_secret_key'
+
+# Mock database for blog posts
+posts = [
+    {'title': 'Post 1', 'content': 'This is the content of Post 1.'},
+    {'title': 'Post 2', 'content': 'This is the content of Post 2.'},
+]
+
+# Mock user data for authentication
+users = {'username': 'password'}
+
+def login_required(f):
+    @wraps(f)
+    def decorated_function(*args, **kwargs):
+        if 'user' not in session:
+            return redirect(url_for('login'))
+        return f(*args, **kwargs)
+    return decorated_function
+
+@app.route('/')
+def index():
+    return render_template('index.html', posts=posts)
+
+@app.route('/login', methods=['GET', 'POST'])
+def login():
+    if request.method == 'POST':
+        username = request.form['username']
+        password = request.form['password']
+        if username in users and users[username] == password:
+            session['user'] = username
+            return redirect(url_for('index'))
+    return render_template('login.html')
+
+@app.route('/logout')
+@login_required
+def logout():
+    session.pop('user', None)
+    return redirect(url_for('login'))
+
+@app.route('/create_post', methods=['GET', 'POST'])
+@login_required
+def create_post():
+    if request.method == 'POST':
+        title = request.form['title']
+        content = request.form['content']
+        posts.append({'title': title, 'content': content})
+        return redirect(url_for('index'))
+    return render_template('create_post.html')
+
+if __name__ == '__main__':
+    app.run(debug=True)
+
+
+# pytest 1
+import pytest
+
+@pytest.fixture
+def setup_teardown_example():
+    print("\nSetting up...")
+    yield
+    print("\nTearing down...")
+
+def test_with_fixture(setup_teardown_example):
+    print("Running test 1")
+    assert True
+
+def test_another_with_fixture(setup_teardown_example):
+    print("Running test 2")
+    assert True
