@@ -57,7 +57,7 @@ if __name__ == '__main__':
     app.run(debug=True)
 
 
-# pytest 1
+# pytest basic exercise 1
 import pytest
 
 @pytest.fixture
